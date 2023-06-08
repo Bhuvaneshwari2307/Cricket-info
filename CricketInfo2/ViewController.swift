@@ -61,6 +61,6 @@ extension ViewController: UITableViewDelegate {
         let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as! MatchDetailVC
         
         show(vc, sender: self)
-        print("hello")
+      
     }
 }
