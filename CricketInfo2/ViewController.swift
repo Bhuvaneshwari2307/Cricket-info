@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         tbl.dataSource = self
-        
+        tbl.delegate = self
         
         CricketUtility.shared.getCurrentMatches { matchResult in
             self.matchList = matchResult
