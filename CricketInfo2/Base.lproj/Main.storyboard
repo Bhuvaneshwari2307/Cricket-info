@@ -258,16 +258,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xBf-fW-wbR" secondAttribute="trailing" constant="33" id="z1l-aO-pxg"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="dateL" destination="bzd-gs-qnW" id="Abd-bU-ugz"/>
-                        <outlet property="inningL" destination="Ycg-yR-yR8" id="g2z-ag-Wt3"/>
-                        <outlet property="matchtypeL" destination="KZ8-aK-wQ9" id="gaP-dN-38k"/>
-                        <outlet property="runL" destination="INP-1N-zgd" id="PpO-Nb-4Wh"/>
-                        <outlet property="shortnL" destination="E2B-dC-Vnw" id="lDe-GV-k1J"/>
-                        <outlet property="teamL" destination="Pbz-FK-34n" id="FNq-rr-nPz"/>
-                        <outlet property="venueL" destination="xBf-fW-wbR" id="eem-G6-Iz6"/>
-                        <outlet property="wicL" destination="XPG-TF-FSu" id="iMj-9Z-xhh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXs-7u-Qoy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

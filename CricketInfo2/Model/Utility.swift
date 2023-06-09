@@ -21,11 +21,16 @@ struct MatchDetails: Codable {
     var matchStarted: Bool
     var matchEnded: Bool
     
+
 }
+
 
 struct Name: Codable {
     var name: String
     var shortname: String
+    
+//    var name: String
+//    var shortname: String
 }
 
 struct Scores: Codable {
@@ -38,6 +43,8 @@ struct Scores: Codable {
 
 struct MatchResult: Codable {
     var data: [MatchDetails]
+    var status: String
+    
 }
 
 
@@ -47,9 +54,12 @@ struct CricketUtility {
     
     static var shared = CricketUtility()
     
-    init() {
+    private init() {
         
     }
+    
+    let session = URLSession.shared
+
     
     func getCurrentMatches(handler: @escaping ([MatchDetails]) -> Void) {
         
@@ -93,7 +103,7 @@ struct CricketUtility {
                 
                 else {
                     
-                    print("Request Failed")
+                    print("Request Failed: Network Problem")
                     
                 }
                 

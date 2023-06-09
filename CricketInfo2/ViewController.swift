@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tbl: UITableView!
     
+    let vModel = MatchViewModel()
+    
     var matchList: [MatchDetails] = []
     
     
@@ -22,13 +24,33 @@ class ViewController: UIViewController {
         tbl.dataSource = self
         tbl.delegate = self
         
-        CricketUtility.shared.getCurrentMatches { matchResult in
-            self.matchList = matchResult
+        print(NSHomeDirectory())
+        
+        tbl.backgroundColor = .clear
+        
+    
+        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        if !vModel.isConnected{
+            tbl.isHidden = true
+            let settingUrl = UIApplication.openSettingsURLString
             
-            DispatchQueue.main.sync {
-                self.tbl.reloadData()
+            UIApplication.shared.open(URL(string: settingUrl)!)
+        }
+        else {
+            tbl.isHidden = false
+            vModel.getMatches { matchResult in
+                
+                self.matchList = matchResult
+                
+                DispatchQueue.main.sync {
+                    self.tbl.reloadData()
+                }
             }
         }
+            
     }
 
 
@@ -59,6 +81,7 @@ extension ViewController: UITableViewDelegate {
         let selectedMatch = matchList[indexPath.row]
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "detail") as! MatchDetailVC
+        vc.match = selectedMatch
         
         show(vc, sender: self)
       
