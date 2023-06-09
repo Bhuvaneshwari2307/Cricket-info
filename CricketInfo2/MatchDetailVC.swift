@@ -23,11 +23,7 @@ class MatchDetailVC: UIViewController {
     
     @IBOutlet weak var shortn2L: UILabel!
     
-    //@IBOutlet weak var inningL: UILabel!
-    
-   // @IBOutlet weak var runL: UILabel!
-    
-   // @IBOutlet weak var wicL: UILabel!
+
     
     @IBOutlet weak var inning1L: UILabel!
     
@@ -49,21 +45,6 @@ class MatchDetailVC: UIViewController {
     
     @IBOutlet weak var endedL: UILabel!
     
-    @IBOutlet weak var todayhitL: UILabel!
-    
-    @IBOutlet weak var usedhitL: UILabel!
-    
-    @IBOutlet weak var limithitL: UILabel!
-    
-    @IBOutlet weak var creditL: UILabel!
-    
-    @IBOutlet weak var serverL: UILabel!
-    
-    @IBOutlet weak var offsetL: UILabel!
-    
-    @IBOutlet weak var totalrowL: UILabel!
-    
-    @IBOutlet weak var querytL: UILabel!
     
     @IBOutlet weak var nameL: UILabel!
     
@@ -77,7 +58,7 @@ class MatchDetailVC: UIViewController {
     var match: MatchDetails?
     
 
-    
+    var score: Scores?
 
     
     override func viewDidLoad() {
@@ -88,8 +69,8 @@ class MatchDetailVC: UIViewController {
         if let match = match {
             
             nameL.text = match.name
-            team1L.text = match.teamInfo[0].name
-            team2L.text = match.teamInfo[1].name
+            //team1L.text = match.teamInfo[0].name
+            //team2L.text = match.teamInfo[1].name
             shortn1L.text = match.teamInfo[0].shortname
             shortn2L.text = match.teamInfo[1].shortname
             dateL.text = match.date
