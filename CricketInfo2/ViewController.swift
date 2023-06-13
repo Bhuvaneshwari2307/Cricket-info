@@ -66,7 +66,7 @@ extension ViewController: UITableViewDataSource {
         let match = matchList[indexPath.row]
         
         cell.nameL.text = "\(match.name)"
-        cell.matchL.text = "\(match.matchType)"
+        cell.matchL.text = match.matchType
         cell.statusL.text = "\(match.status)"
         cell.dateL.text = "\(match.date)"
         

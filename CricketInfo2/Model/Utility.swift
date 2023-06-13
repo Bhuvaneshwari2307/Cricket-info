@@ -10,24 +10,26 @@ import Foundation
 struct MatchDetails: Codable {
     var id: String
     var name: String
-    var matchType: String
+    var matchType: String?
     var status: String
     var venue: String
     var date: String
     var dateTimeGMT: String
-    var teams: [String]
+    //var teams: [String]
     var teamInfo: [Name]
     var score: [Scores]
     var matchStarted: Bool
     var matchEnded: Bool
+    
     
 
 }
 
 
 struct Name: Codable {
-    var name: String
-    var shortname: String
+    var name: String?
+    var shortname: String?
+    var img: String
     
 //    var name: String
 //    var shortname: String
@@ -37,7 +39,7 @@ struct Scores: Codable {
     
     var r: Double
     var w: Double
-    var o: Double
+    var o: Float
     var inning: String
 }
 
