@@ -21,6 +21,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        downloadJSON {
+            self.tbl.reloadData()
+            print("Success")
+        }
+        
         tbl.dataSource = self
         tbl.delegate = self
         
@@ -30,6 +35,26 @@ class ViewController: UIViewController {
         
     
         
+    }
+    
+    func downloadJSON(completed: @escaping () ->()) {
+        let url = URL(string: "https://g.cricapi.com/iapi/")
+        
+        URLSession.shared.dataTask(with: url!) { data, resoponse, err in
+            if err == nil {
+                do {
+                    self.matchList = try JSONDecoder().decode([MatchDetails].self, from: data!)
+                    DispatchQueue.main.async {
+                        completed()
+                    }
+                }
+                catch {
+                    print("error fetching data")
+                }
+                
+                
+            }
+        }.resume()
     }
 
     override func viewWillAppear(_ animated: Bool) {

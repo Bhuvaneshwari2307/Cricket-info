@@ -76,6 +76,10 @@ class MatchDetailVC: UIViewController {
                 team2L.text = "Not Available"
                 shortn2L.text = ""
                 
+                let imgUrl = match.teamInfo[0].img
+                print(imgUrl)
+                img1.downloaded(from: imgUrl)
+                
             }
             
             else if match.teamInfo.count >=  2            {
@@ -84,6 +88,17 @@ class MatchDetailVC: UIViewController {
                 shortn1L.text = match.teamInfo[0].shortname
                 team2L.text = match.teamInfo[1].name
                 shortn2L.text = match.teamInfo[1].shortname
+                
+                
+                
+                let imgUrl1 = match.teamInfo[0].img
+                print(imgUrl1)
+                img1.downloaded(from: imgUrl1)
+                
+                
+                let imgUrl2 = match.teamInfo[1].img
+                print(imgUrl2)
+                img2.downloaded(from: imgUrl2)
       
             }
             else {
@@ -147,12 +162,35 @@ class MatchDetailVC: UIViewController {
 
     }
     
-    
    
+}
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+            let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+            let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+            let data = data, error == nil,
+            let image = UIImage(data: data)
+            else {
+                return
+                
+            }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+            
+        }.resume()
         
-
-    
-    
-
-    
+    }
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit)
+    {
+        guard let url = URL(string: link)
+        else {
+                        return
+                        
+            }
+            downloaded(from: url, contentMode: mode)
+    }
 }
