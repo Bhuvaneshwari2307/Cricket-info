@@ -51,6 +51,10 @@ class MatchDetailVC: UIViewController {
     @IBOutlet weak var statusL: UILabel!
     
 
+    @IBOutlet weak var img1: UIImageView!
+    
+    @IBOutlet weak var img2: UIImageView!
+    
     
     var match: MatchDetails?
     
@@ -136,11 +140,7 @@ class MatchDetailVC: UIViewController {
             
             
             
-//            CricketUtility.shared.downloadPoster(imageName: match.teamInfo.img) { url in
-//                let imgData = try! Data(contentsOf: url)
-//
-//                self.img1.image = UIImage(data: imgData)
-//            }
+
 
         }
         
