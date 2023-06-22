@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bng-kb-wa7">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -18,14 +18,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT MATCHES 🏏" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFs-PN-Jmj">
-                                <rect key="frame" x="47" y="70" width="333" height="32"/>
-                                <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
+                                <rect key="frame" x="20" y="88" width="390" height="74"/>
+                                <color key="backgroundColor" red="0.68858704596817566" green="0.73269127714811089" blue="0.79794034093030297" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="QkR-w7-RzR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AcademyEngravedLetPlain" family="Academy Engraved LET" pointSize="24"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="160" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="3TL-Ls-GYw">
-                                <rect key="frame" x="20" y="157.66666666666669" width="390" height="740.33333333333326"/>
+                                <rect key="frame" x="20" y="187.66666666666669" width="390" height="710.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" systemColor="labelColor"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,22 +120,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="3TL-Ls-GYw" firstAttribute="top" secondItem="sFs-PN-Jmj" secondAttribute="bottom" constant="25.666666666666629" id="2yd-ow-VJw"/>
                             <constraint firstItem="3TL-Ls-GYw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="50k-Ao-Kir"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sFs-PN-Jmj" secondAttribute="trailing" constant="50" id="EZL-pH-d3T"/>
-                            <constraint firstItem="sFs-PN-Jmj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="SGd-vT-Dqy"/>
                             <constraint firstItem="3TL-Ls-GYw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zfa-0I-Kp5"/>
-                            <constraint firstItem="3TL-Ls-GYw" firstAttribute="top" secondItem="sFs-PN-Jmj" secondAttribute="bottom" constant="55.666666666666657" id="Zr0-mh-tlj"/>
+                            <constraint firstItem="sFs-PN-Jmj" firstAttribute="trailing" secondItem="3TL-Ls-GYw" secondAttribute="trailing" id="dCy-2M-U21"/>
+                            <constraint firstItem="sFs-PN-Jmj" firstAttribute="leading" secondItem="3TL-Ls-GYw" secondAttribute="leading" id="i33-eV-cBq"/>
                             <constraint firstItem="3TL-Ls-GYw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kRJ-0t-ebj"/>
-                            <constraint firstItem="sFs-PN-Jmj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="11" id="nkW-8S-DMI"/>
+                            <constraint firstItem="sFs-PN-Jmj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-15" id="tXA-I7-TCy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="wCM-ZD-V7Z"/>
                     <connections>
                         <outlet property="tbl" destination="3TL-Ls-GYw" id="wsp-RJ-Q1v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-448.09160305343511" y="-23.239436619718312"/>
+            <point key="canvasLocation" x="449.30232558139534" y="-23.819742489270389"/>
         </scene>
         <!--Match DetailVC-->
         <scene sceneID="1w7-yO-rrh">
@@ -466,7 +470,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXs-7u-Qoy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="460.46511627906978" y="-23.819742489270389"/>
+            <point key="canvasLocation" x="1359.0697674418604" y="-23.819742489270389"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nIP-iR-auA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bng-kb-wa7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ixi-r9-zf4">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vNg-h2-xM3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VtL-gB-4tT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-449.30232558139534" y="-23.819742489270389"/>
         </scene>
     </scenes>
     <resources>

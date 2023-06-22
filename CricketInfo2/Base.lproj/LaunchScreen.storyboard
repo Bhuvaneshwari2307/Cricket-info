@@ -19,14 +19,28 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cric" translatesAutoresizingMaskIntoConstraints="NO" id="zSy-Bd-kUQ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CRICZONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v04-Vy-Tex">
+                                <rect key="frame" x="38" y="100" width="317" height="54"/>
+                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="56"/>
+                                <color key="textColor" red="1" green="0.98921569009999999" blue="0.85763404239999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zSy-Bd-kUQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="Lh9-os-eNH"/>
+                            <constraint firstItem="v04-Vy-Tex" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="1sR-fE-3mu">
+                                <variation key="heightClass=compact-widthClass=regular" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="v04-Vy-Tex" secondAttribute="bottom" constant="664" id="JV7-0l-R5w"/>
+                            <constraint firstItem="zSy-Bd-kUQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-59" id="Lh9-os-eNH">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-59"/>
+                            </constraint>
                             <constraint firstItem="zSy-Bd-kUQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MKJ-Ug-ymM"/>
+                            <constraint firstItem="v04-Vy-Tex" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="Mts-ub-ZnO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zSy-Bd-kUQ" secondAttribute="trailing" id="egn-NI-LbV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zSy-Bd-kUQ" secondAttribute="bottom" constant="-34" id="rvT-YP-3ua"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v04-Vy-Tex" secondAttribute="trailing" constant="38" id="yyC-10-U76"/>
                         </constraints>
                     </view>
                 </viewController>
