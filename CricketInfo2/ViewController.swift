@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Network
 
 class ViewController: UIViewController {
 
+    
+    @IBOutlet weak var progressV: UIActivityIndicatorView!
+    
+    
     
     @IBOutlet weak var tbl: UITableView!
     
@@ -59,6 +64,10 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         if !vModel.isConnected{
+            
+            self.progressV.isHidden = false
+            progressV.startAnimating()
+            
             tbl.isHidden = true
             let settingUrl = UIApplication.openSettingsURLString
             
@@ -71,6 +80,10 @@ class ViewController: UIViewController {
                 self.matchList = matchResult
                 
                 DispatchQueue.main.sync {
+                    self.progressV.stopAnimating()
+                    self.progressV.isHidden = true
+                    //self.searchedData = self.matchList
+
                     self.tbl.reloadData()
                 }
             }
